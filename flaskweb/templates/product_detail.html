@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            max-width: 800px; 
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        .image-container {
+            flex: 1;
+            text-align: center; 
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        .details-container {
+            flex: 1;
+            padding-left: 20px; /* İstediğiniz boşluğu ayarlayabilirsiniz */
+        }
+        .details-container p {
+            margin: 5px 0;
+        }
+    
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/' + product.image_url) }}" alt="{{ product.description }}">
+    </div>
+    <div class="details-container">
+        <h1>{{ product.description }}</h1>
+        <p>Product No: {{ product.product_no }}</p>
+        <p>Price: {{ product.price }}</p>
+        <p>Category: {{ product.category }}</p>
+        <p>Size: {{ product.size }}</p>
+    </div>
+</div>
+
+
+</body>
+</html>
+
